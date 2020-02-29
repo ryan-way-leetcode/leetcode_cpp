@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "name": "project",
+            "includePath": [
+                "/src",
+                "${default}"
+            ]
+        }
+    ],
+    "version": 4
+}

@@ -2,12 +2,8 @@
  * Definition for a binary tree node.
  */
 #include <vector>
-struct TreeNode {
-     int val;
-     TreeNode *left;
-     TreeNode *right;
-     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
+#include "helpers.cpp"
+
 
 class Solution {
 public:
