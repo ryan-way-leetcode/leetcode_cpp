@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/rway/projects/leetcode/cplusplus/build",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/main.dir/src/helpers.cpp.o -c /home/rway/projects/leetcode/cplusplus/src/helpers.cpp",
+  "file": "/home/rway/projects/leetcode/cplusplus/src/helpers.cpp"
+},
+{
+  "directory": "/home/rway/projects/leetcode/cplusplus/build",
+  "command": "/usr/bin/c++    -g   -o CMakeFiles/main.dir/src/main.cpp.o -c /home/rway/projects/leetcode/cplusplus/src/main.cpp",
+  "file": "/home/rway/projects/leetcode/cplusplus/src/main.cpp"
+}
+]
