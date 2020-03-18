@@ -1,6 +1,6 @@
 build/
 CMakeFiles/
 Testing/
-CMake*
+CMakeCache.txt
 cmake*
 c_cpp_properties.json
