@@ -1,3 +1,0 @@
-/home/rway/projects/leetcode/cplusplus/CMakeFiles/rebuild_cache.dir
-/home/rway/projects/leetcode/cplusplus/CMakeFiles/main.dir
-/home/rway/projects/leetcode/cplusplus/CMakeFiles/edit_cache.dir

@@ -67,10 +67,21 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -122,6 +133,19 @@ main: cmake_check_build_system
 main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
 
 src/helpers.o: src/helpers.cpp.o
 
@@ -177,6 +201,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+test/easy/sortedArrayToBST_Test.o: test/easy/sortedArrayToBST_Test.cpp.o
+
+.PHONY : test/easy/sortedArrayToBST_Test.o
+
+# target to build an object file
+test/easy/sortedArrayToBST_Test.cpp.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/easy/sortedArrayToBST_Test.cpp.o
+.PHONY : test/easy/sortedArrayToBST_Test.cpp.o
+
+test/easy/sortedArrayToBST_Test.i: test/easy/sortedArrayToBST_Test.cpp.i
+
+.PHONY : test/easy/sortedArrayToBST_Test.i
+
+# target to preprocess a source file
+test/easy/sortedArrayToBST_Test.cpp.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/easy/sortedArrayToBST_Test.cpp.i
+.PHONY : test/easy/sortedArrayToBST_Test.cpp.i
+
+test/easy/sortedArrayToBST_Test.s: test/easy/sortedArrayToBST_Test.cpp.s
+
+.PHONY : test/easy/sortedArrayToBST_Test.s
+
+# target to generate assembly for a file
+test/easy/sortedArrayToBST_Test.cpp.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/test/easy/sortedArrayToBST_Test.cpp.s
+.PHONY : test/easy/sortedArrayToBST_Test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -184,14 +235,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... main"
+	@echo "... test"
 	@echo "... edit_cache"
+	@echo "... main"
+	@echo "... tests"
 	@echo "... src/helpers.o"
 	@echo "... src/helpers.i"
 	@echo "... src/helpers.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... test/easy/sortedArrayToBST_Test.o"
+	@echo "... test/easy/sortedArrayToBST_Test.i"
+	@echo "... test/easy/sortedArrayToBST_Test.s"
 .PHONY : help
 
 
