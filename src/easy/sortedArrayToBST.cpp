@@ -2,7 +2,6 @@
  * Definition for a binary tree node.
  */
 #include "../../include/easy/sortedArrayToBST.hpp"
-#include <iostream>
 
 TreeNode<int>* 
 SortedArrayToBST::Solution::sortedArrayToBST(
@@ -21,9 +20,4 @@ SortedArrayToBST::Solution::_sortedArrayToBST(
     if(end < start) return NULL;
     int mid = (end+start)/2;
     TreeNode<int>* root = new TreeNode<int>(nums[mid]);
-}
-
-int main()
-{
-    std::cout << "Hello world" << std::endl;
 }

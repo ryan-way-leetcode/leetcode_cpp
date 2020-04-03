@@ -1,3 +1,6 @@
-int main() {
-    return 1;
+#include <gtest/gtest.h>
+
+
+TEST(SortedArrayToBST, EmptyArray) {
+
 }
