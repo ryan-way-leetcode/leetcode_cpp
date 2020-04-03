@@ -12,11 +12,8 @@ add_subdirectory(include)
 add_subdirectory(src)
 enable_testing()
 
-# file(GLOB_RECURSE HEADERS "${PROJECT_SOURCE_DIR}/include/*.hpp")
-# file(GLOB_RECURSE SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp")
-
 # add_library(${This} ${SOURCES} ${HEADERS})
 # target_include_directories(${This} PRIVATE ${HEADERS})
 
-# add_subdirectory(depend/googletest)
-# add_subdirectory(test)
+add_subdirectory(depend/googletest)
+add_subdirectory(test)
