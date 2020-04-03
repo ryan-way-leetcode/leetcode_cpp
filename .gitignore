@@ -1,5 +1,4 @@
 build/
-depend/
 CMakeFiles/
 Testing/
 *CMakeCache.txt
