@@ -7,13 +7,16 @@
 typedef LeetCode::Helper::TreeNode<int> TreeNode;
 
 namespace SortedArrayToBST {
-    class Solution {
-        public:
-            TreeNode* sortedArrayToBST(std::vector<int>& nums);
+  class Solution {
+    public:
+      TreeNode* sortedArrayToBST(std::vector<int>& nums);
 
-        private:
-            TreeNode* _sortedArrayToBST(std::vector<int>& nums, int start, int end);
-    };
+    private:
+      TreeNode* _sortedArrayToBST(std::vector<int>& nums, 
+        int start, 
+        int end, 
+        int = 0);
+  };
 
 }
 #endif
