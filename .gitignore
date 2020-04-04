@@ -1,6 +1,9 @@
 build/
+depend/
 CMakeFiles/
 Testing/
-CMake*
-cmake*
+*CMakeCache.txt
+*.cmake
 c_cpp_properties.json
+Makefile
+settings.json
