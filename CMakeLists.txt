@@ -12,8 +12,5 @@ add_subdirectory(include)
 add_subdirectory(src)
 enable_testing()
 
-# add_library(${This} ${SOURCES} ${HEADERS})
-# target_include_directories(${This} PRIVATE ${HEADERS})
-
-add_subdirectory(depend/googletest)
+add_subdirectory(depend/googletest googletest)
 add_subdirectory(test)
