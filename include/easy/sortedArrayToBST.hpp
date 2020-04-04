@@ -14,8 +14,7 @@ namespace SortedArrayToBST {
     private:
       TreeNode* _sortedArrayToBST(std::vector<int>& nums, 
         int start, 
-        int end, 
-        int = 0);
+        int end);
   };
 
 }
