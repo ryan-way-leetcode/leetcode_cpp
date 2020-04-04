@@ -2,22 +2,29 @@
  * Definition for a binary tree node.
  */
 #include "../../include/easy/sortedArrayToBST.hpp"
+#include <cmath>
 
-TreeNode<int>* 
+TreeNode* 
 SortedArrayToBST::Solution::sortedArrayToBST(
-    std::vector<int>& nums) {
-    int mid = nums.size()/2;
-    TreeNode<int>* root = new TreeNode<int>(nums[mid]);
-    root->left = this->_sortedArrayToBST(nums, 0, mid-1);
-    root->right = this->_sortedArrayToBST(nums, mid+1, nums.size()-1);
-    return root;
+  std::vector<int>& nums) 
+{
+  if(nums.size() == 0 ) return nullptr;
+  int mid = nums.size()/2;
+  TreeNode* root = new TreeNode(nums[mid]);
+  root->left = this->_sortedArrayToBST(nums, 0, mid-1);
+  root->right = this->_sortedArrayToBST(nums, mid+1, nums.size()-1);
+  return root;
 }
 
-TreeNode<int>*
+TreeNode*
 SortedArrayToBST::Solution::_sortedArrayToBST(
-    std::vector<int>& nums, int start, int end) {
+  std::vector<int>& nums, int start, int end) 
+{
+  if(end < start) return nullptr;
+  int mid = ceil((end+start)/2.0);
+  TreeNode* root = new TreeNode(nums[mid]);
+  root->left = this->_sortedArrayToBST(nums, start, mid-1);
+  root->right = this->_sortedArrayToBST(nums, mid+1, end);
 
-    if(end < start) return NULL;
-    int mid = (end+start)/2;
-    TreeNode<int>* root = new TreeNode<int>(nums[mid]);
+  return root;
 }
