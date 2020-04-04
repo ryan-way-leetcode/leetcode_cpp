@@ -1,15 +1,17 @@
+set(This leetCodeTests)
+
 set(SOURCES
 easy/sortedArrayToBST_Test.cpp
 )
 
-add_executable(leetCode_Tests ${SOURCES})
+add_executable(${This} ${SOURCES})
 
-target_link_libraries(leetCode_Tests PUBLIC
+target_link_libraries(${This} PUBLIC
 gtest_main
 leetCode_Includes
 )
 
 add_test(
-    NAME leetCode_Tests
-    COMMAND test
+    NAME ${This}
+    COMMAND ${This}
 )
