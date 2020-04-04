@@ -4,13 +4,15 @@
 #include <vector>
 #include "../helpers.hpp"
 
+typedef LeetCode::Helper::TreeNode<int> TreeNode;
+
 namespace SortedArrayToBST {
     class Solution {
         public:
-            TreeNode<int>* sortedArrayToBST(std::vector<int>& nums);
+            TreeNode* sortedArrayToBST(std::vector<int>& nums);
 
         private:
-            TreeNode<int>* _sortedArrayToBST(std::vector<int>& nums, int start, int end);
+            TreeNode* _sortedArrayToBST(std::vector<int>& nums, int start, int end);
     };
 
 }
