@@ -1,7 +1,8 @@
 set(This leetCodeTests)
 
 set(SOURCES
-easy/sortedArrayToBST_Test.cpp
+    easy/sortedArrayToBSTTests.cpp
+    easy/oneAndTwoBitCharsTests.cpp
 )
 
 add_executable(${This} ${SOURCES})
