@@ -3,6 +3,8 @@ set(This leetCodeTests)
 set(SOURCES
     easy/sortedArrayToBSTTests.cpp
     easy/oneAndTwoBitCharsTests.cpp
+    easy/moveZeroes.cpp
+    easy/sumOfTwoNoZeroIntegersTests.cpp
 )
 
 add_executable(${This} ${SOURCES})

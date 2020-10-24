@@ -12,5 +12,5 @@ add_subdirectory(include)
 add_subdirectory(src)
 enable_testing()
 
-add_subdirectory(depend/googletest googletest)
+add_subdirectory(depend/googletest)
 add_subdirectory(test)
