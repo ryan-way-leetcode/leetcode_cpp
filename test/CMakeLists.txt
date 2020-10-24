@@ -15,7 +15,6 @@ leetCode_Includes
 leetCode_Sources
 )
 
-add_test(
-    NAME ${This}
-    COMMAND ${This}
-)
+include(GoogleTest)
+
+gtest_discover_tests(${This})
