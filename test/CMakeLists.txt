@@ -1,3 +1,4 @@
+include(GoogleTest)
 set(This leetCodeTests)
 
 set(SOURCES
@@ -15,6 +16,5 @@ leetCode_Includes
 leetCode_Sources
 )
 
-include(GoogleTest)
 
 gtest_discover_tests(${This})
