@@ -19,32 +19,45 @@ int NumberOfBoomerangs::Solution::numberOfBoomerangs(
 int NumberOfBoomerangs::Solution::numberOfBoomerangs_O2_Fast(
     vector<vector<int>>& points)
 {
-  set<pair<int, int>> sPoints = set<pair<int, int>>();
+  set<vector<int>> sPoints = set<vector<int>>();
   for(vector<vector<int>>::iterator it = points.begin();
       it != points.end(); it++)
   {
-    sPoints.insert(pair<int, int>((*it)[0], (*it)[1]));
+    sPoints.insert(*it);
   }
 
   int count = 0;
-  for(set<pair<int, int>>::iterator i = sPoints.begin();
+  for(set<vector<int>>::iterator i = sPoints.begin();
       i != sPoints.end(); i++)
   {
-    set<pair<int, int>> counted_distances = set<pair<int, int>>();
-    for(set<pair<int, int>>::iterator j = std::next(i);
+    set<vector<int>> counted_distances = set<vector<int>>();
+    for(set<vector<int>>::iterator j = sPoints.begin();
         j != sPoints.end(); j++)
     {
-      pair<int, int> distance =
-        pair<int, int>(std::abs(i->first-j->first), std::abs(i->second-j->second));
+      if (i == j) continue;
+      
+      vector<int> distance = { 
+        std::abs((*i)[0]-(*j)[0]), 
+        std::abs((*i)[1]-(*j)[1])
+      };
 
       if(counted_distances.count(distance) == 0)
       {
         counted_distances.insert(distance);
+        counted_distances.insert({ distance[1], distance[0] });
         int num_this_distance = 
-         counted_distances.count(pair<int, int>(i->first+distance.first, i->second+distance.second)) +
-         counted_distances.count(pair<int, int>(i->first-distance.first, i->second+distance.second)) +
-         counted_distances.count(pair<int, int>(i->first+distance.first, i->second-distance.second)) +
-         counted_distances.count(pair<int, int>(i->first-distance.first, i->second-distance.second)); 
+         sPoints.count({ (*i)[0]+distance[0], (*i)[1]+distance[1] }) +
+         (distance[0] ? sPoints.count({ (*i)[0]-distance[0], (*i)[1]+distance[1] }) : 0) +
+         (distance[1] ? sPoints.count({ (*i)[0]+distance[0], (*i)[1]-distance[1] }) : 0) +
+         (distance[0] && distance[1] ? sPoints.count({ (*i)[0]-distance[0], (*i)[1]-distance[1] }) : 0); 
+
+        if (distance[0] != distance[1])
+          num_this_distance += 
+            sPoints.count({ (*i)[0]+distance[1], (*i)[1]+distance[0] }) +
+            (distance[1] ? sPoints.count({ (*i)[0]-distance[1], (*i)[1]+distance[0] }) : 0) +
+            (distance[0] ? sPoints.count({ (*i)[0]+distance[1], (*i)[1]-distance[0] }) : 0) +
+            (distance[1] && distance[0] ? sPoints.count({ (*i)[0]-distance[1], (*i)[1]-distance[0] }) : 0); 
+
 
         count += num_this_distance*(num_this_distance-1);
       } 
