@@ -3,5 +3,6 @@ set(easy_source_files
     oneAndTwoBitChars.cpp
     moveZeroes.cpp
     sumOfTwoNoZeroIntegers.cpp
+    numberofboomeranges.cpp
 )
 add_library(easy_sources OBJECT "${easy_source_files}")
