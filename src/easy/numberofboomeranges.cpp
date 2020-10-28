@@ -13,7 +13,7 @@ double NumberOfBoomerangs::Solution::distance(
 int NumberOfBoomerangs::Solution::numberOfBoomerangs(
     vector<vector<int>>& points)
 {
-  return this->numberOfBoomerangs_O2_Fast(points);
+  return this->numberOfBoomerangs_O2(points);
 }
 
 int NumberOfBoomerangs::Solution::numberOfBoomerangs_O2_Fast(
@@ -79,56 +79,35 @@ int NumberOfBoomerangs::Solution::numberOfBoomerangs_O2(
 {
   //will contain for each point p, create a map of distance d to number of 
   //points that are d distance from p
-  map<pair<int, int>, map<double, int>> distances = 
-   map<pair<int, int>, map<double, int>>(); 
 
+  int count = 0;
   for(vector<vector<int>>::iterator i = points.begin();
       i != points.end(); i++)
   {
-    for(vector<vector<int>>::iterator j = i+1; 
+    map<double, int> distances = map<double, int>();
+    for(vector<vector<int>>::iterator j = points.begin(); 
         j != points.end(); j++)
     {
-      pair<int, int> pair_i = pair<int, int>((*i)[0], (*i)[1]);
-      pair<int, int> pair_j = pair<int, int>((*j)[0], (*j)[1]);
+      if(*j == *i) continue;
+
       double distance = this->distance(*i, *j);
 
-      if(distances.count(pair_j) == 0)
+      if(distances.count(distance) == 0)
       {
-        distances[pair_j] = map<double, int>();
-      }
-
-      if(distances[pair_i].count(distance) == 0)
-      {
-        distances[pair_i][distance] = 0;
+        distances[distance] = 0;
       }
       
-      if(distances[pair_j].count(distance) == 0)
-      {
-        distances[pair_j][distance] = 0;
-      }
-
-      distances[pair_i][distance] += 1; 
-      distances[pair_j][distance] += 1; 
+      distances[distance] += 1; 
 
     }
-  }
 
-  int count = 0;
-  int max = 0; 
-  for(map<pair<int, int>, map<double, int>>::iterator i = distances.begin();
-      i != distances.end(); i++)
-  {
-    for(map<double, int>::iterator j = i->second.begin();
-       j != i->second.end(); j++) 
+    for(map<double, int>::iterator j = distances.begin();
+        j != distances.end(); j++)
     {
       count += j->second*(j->second-1);
-      if(j->first > max)
-      {
-        max = j->first;
-      }
     }
   }
-  cout << max << endl;
+
   return count;
 }
 
