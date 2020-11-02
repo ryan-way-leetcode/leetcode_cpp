@@ -5,5 +5,6 @@ set(easy_source_files
     sumOfTwoNoZeroIntegers.cpp
     numberofboomeranges.cpp
     228summaryranges.cpp
+    232implementQueueUsingStacks.cpp
 )
 add_library(easy_sources OBJECT "${easy_source_files}")
