@@ -2,7 +2,7 @@
 #include "../../../include/easy/232implementQueueUsingStacks.hpp"
 
 
-TEST(SummaryRanges, Example1)
+TEST(ImplementQueueUsingStacks, Example1)
 {
   ImplementQueueUsingStacks::MyQueue q = ImplementQueueUsingStacks::MyQueue();
   q.push(1);
