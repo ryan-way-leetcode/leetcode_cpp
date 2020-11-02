@@ -8,6 +8,7 @@ set(SOURCES
     easy/sumOfTwoNoZeroIntegersTests.cpp
     easy/numberofboomerangesTests.cpp
     easy/228summaryrangesTest.cpp
+    easy/232implementQueueUsingStacksTests.cpp
 )
 
 add_executable(${This} ${SOURCES})
