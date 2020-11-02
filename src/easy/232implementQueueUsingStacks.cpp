@@ -1,25 +1,45 @@
 #include "../../include/easy/232implementQueueUsingStacks.hpp"
 
-ImplementQueueUsingStacks::MyQueue::MyQueue()
+using ImplementQueueUsingStacks::MyQueue;
+
+MyQueue::MyQueue()
 {
 }
 
-void ImplementQueueUsingStacks::MyQueue::push(int x)
+void MyQueue::push(int x)
 {
+  if (_stack.empty()) _top = x;
+  _stack.push(x); 
+}
+
+int MyQueue::pop()
+{
+  stack<int> temp;
+  while(_stack.size() != 1) 
+  {
+    temp.push(_stack.top());
+    _stack.pop();
+  }
   
+  int value = _stack.top();
+  _stack.pop();
+  
+  if(temp.size()) _top = temp.top();
+  while(temp.size())
+  {
+    _stack.push(temp.top());
+    temp.pop();
+  }
+
+  return value;
 }
 
-int ImplementQueueUsingStacks::MyQueue::pop()
+int MyQueue::peek()
 {
-  return 0;
+  return _top;
 }
 
-int ImplementQueueUsingStacks::MyQueue::peek()
+bool MyQueue::empty()
 {
-  return 0;
-}
-
-bool ImplementQueueUsingStacks::MyQueue::empty()
-{
-  return true;
+  return _stack.empty();
 }

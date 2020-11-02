@@ -1,6 +1,8 @@
 #ifndef IMPLEMENTQUEUEUSINGSTACKS
 #define IMPLEMENTQUEUEUSINGSTACKS
 
+#include <stack>
+
 using namespace std;
 
 namespace ImplementQueueUsingStacks {
@@ -12,6 +14,10 @@ namespace ImplementQueueUsingStacks {
       int pop();
       int peek();
       bool empty();
+
+    private:
+      stack<int> _stack;
+      int _top;
   };
 
 }
