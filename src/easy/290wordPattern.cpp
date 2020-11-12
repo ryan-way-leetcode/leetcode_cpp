@@ -13,24 +13,20 @@ bool WordPattern::Solution::wordPattern(string pattern, string s)
     return false;
   }
   
-  vector<pair<string, char>> v_word_to_char(min(words.size(), pattern.size()));  
-  vector<pair<char, string>> v_char_to_word(min(words.size(), pattern.size()));  
-
-  transform(words.begin(), words.end(), pattern.begin(), v_word_to_char.begin(), 
-      make_pair<string&, char&>);
-
-  transform(pattern.begin(), pattern.end(), words.begin(), v_char_to_word.begin(), 
-      make_pair<char&, string&>);
-
-  unordered_map<string, char> m_word_to_char(
-      v_word_to_char.begin(), v_word_to_char.end());
-
-  unordered_map<char, string> m_char_to_word(
-      v_char_to_word.begin(), v_char_to_word.end());
-
+  unordered_map<string, char> m_word_to_char(words.size());  
+  unordered_map<char, string> m_char_to_word(words.size());  
 
   vector<string>::iterator word = words.begin();
   string::iterator token = pattern.begin();
+
+  for(; word != words.end() && token != pattern.end(); word++, token++)
+  {
+    m_word_to_char.insert(make_pair(*word, *token));
+    m_char_to_word.insert(make_pair(*token, *word));
+  }
+
+  word = words.begin();
+  token = pattern.begin();
   for(; word != words.end() && token != pattern.end(); word++, token++)
   {
     if(m_char_to_word.count(*token) == 0 || m_word_to_char.count(*word)  == 0 ||
