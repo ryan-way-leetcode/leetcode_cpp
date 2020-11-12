@@ -6,5 +6,6 @@ set(easy_source_files
     numberofboomeranges.cpp
     228summaryranges.cpp
     232implementQueueUsingStacks.cpp
+    290wordPattern.cpp
 )
 add_library(easy_sources OBJECT "${easy_source_files}")
