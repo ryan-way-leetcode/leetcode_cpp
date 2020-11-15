@@ -10,6 +10,9 @@ namespace SumOfTwoNoZeroIntegers {
   class Solution {
     public:
       vector<int> getNoZeroIntegers(int n);
+
+    private:
+      bool CheckIfNoZeroInteger(int value);
   };
 
 }

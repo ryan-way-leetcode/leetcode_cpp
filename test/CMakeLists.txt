@@ -1,3 +1,4 @@
+include(GoogleTest)
 set(This leetCodeTests)
 
 set(SOURCES
@@ -5,6 +6,11 @@ set(SOURCES
     easy/oneAndTwoBitCharsTests.cpp
     easy/moveZeroes.cpp
     easy/sumOfTwoNoZeroIntegersTests.cpp
+    easy/numberofboomerangesTests.cpp
+    easy/228summaryrangesTest.cpp
+    easy/232implementQueueUsingStacksTests.cpp
+    easy/290wordPatternTests.cpp
+    easy/292NimGameTests.cpp
 )
 
 add_executable(${This} ${SOURCES})
@@ -15,7 +21,5 @@ leetCode_Includes
 leetCode_Sources
 )
 
-add_test(
-    NAME ${This}
-    COMMAND ${This}
-)
+
+gtest_discover_tests(${This})

@@ -1,9 +1,2 @@
 build/
-depend/
-CMakeFiles/
-Testing/
-*CMakeCache.txt
-*.cmake
-c_cpp_properties.json
-Makefile
-settings.json
+*.vim
