@@ -1,15 +1,7 @@
-#xenial distro required for cmake version 3.10+
+#bionic distro required for cmake v3.10+ and g++ v9
 dist: bionic
 sudo: false
 language: cpp
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - g++-9
-env:
-- MATRIX_EVAL="CC=gcc-9 && CXX=g++-9"
 script:
 - mkdir build
 - cd build
