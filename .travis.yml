@@ -1,0 +1,10 @@
+#bionic distro required for cmake v3.10+ and g++ v9
+dist: bionic
+sudo: false
+language: cpp
+script:
+- mkdir build
+- cd build
+- cmake ..
+- make 
+- ctest
