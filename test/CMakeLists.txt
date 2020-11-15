@@ -10,6 +10,7 @@ set(SOURCES
     easy/228summaryrangesTest.cpp
     easy/232implementQueueUsingStacksTests.cpp
     easy/290wordPatternTests.cpp
+    easy/292NimGameTests.cpp
 )
 
 add_executable(${This} ${SOURCES})

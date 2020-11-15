@@ -7,5 +7,6 @@ set(easy_source_files
     228summaryranges.cpp
     232implementQueueUsingStacks.cpp
     290wordPattern.cpp
+    292NimGame.cpp
 )
 add_library(easy_sources OBJECT "${easy_source_files}")
