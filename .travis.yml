@@ -7,7 +7,7 @@ addons:
     sources:
     - ubuntu-toolchain-r-test
     packages:
-    - g++-5
+    - g++-9
 script:
 - mkdir build
 - cd build
