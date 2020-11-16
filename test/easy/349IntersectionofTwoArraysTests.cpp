@@ -12,7 +12,7 @@ TEST(IntersectionofTwoArrays, Example1)
 
   vector<int> act = s.intersection(nums1, nums2);
   
-  EXPECT_EQ(nums1, nums2);
+  EXPECT_EQ(act, out);
 }
 
 TEST(IntersectionofTwoArrays, Example2)
@@ -24,5 +24,5 @@ TEST(IntersectionofTwoArrays, Example2)
 
   vector<int> act = s.intersection(nums1, nums2);
   
-  EXPECT_EQ(nums1, nums2);
+  EXPECT_EQ(act, out);
 }
