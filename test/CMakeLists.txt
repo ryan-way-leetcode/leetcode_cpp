@@ -14,6 +14,7 @@ set(SOURCES
     easy/344ReverseStringTests.cpp
     easy/349IntersectionofTwoArraysTests.cpp
     easy/345ReverseVowelsTest.cpp
+    easy/350IntersectionofTwoArraysIITests.cpp
 )
 
 add_executable(${This} ${SOURCES})
