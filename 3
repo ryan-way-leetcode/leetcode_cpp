@@ -29,8 +29,7 @@ vector<int> IntersectionofTwoArraysII::Solution::intersect(
   {
     if(m_nums1.count(p.first))
     {
-      m_result.insert(make_pair<int&, int const&>(p.first,
-           min(m_nums1[p.first], m_nums2[p.first])));
+      m_result.insert(make_pair<int&, int&>(p.first, min(m_nums1[p.first], m_nums2[p.first])));
     }
   }
 
