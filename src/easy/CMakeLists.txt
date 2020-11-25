@@ -9,5 +9,10 @@ set(easy_source_files
     290wordPattern.cpp
     292NimGame.cpp
     344ReverseString.cpp
+    345ReverseVowels.cpp
+    349IntersectionofTwoArrays.cpp
+    350IntersectionofTwoArraysII.cpp
+    387FirstUniqueCharacterInString.cpp
+    383RansomNote.cpp
 )
 add_library(easy_sources OBJECT "${easy_source_files}")

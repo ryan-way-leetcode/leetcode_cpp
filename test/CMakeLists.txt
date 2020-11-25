@@ -12,6 +12,11 @@ set(SOURCES
     easy/290wordPatternTests.cpp
     easy/292NimGameTests.cpp
     easy/344ReverseStringTests.cpp
+    easy/349IntersectionofTwoArraysTests.cpp
+    easy/345ReverseVowelsTest.cpp
+    easy/350IntersectionofTwoArraysIITests.cpp
+    easy/387FirstUniqueCharacterInStringTests.cpp
+    easy/383RansomNoteTests.cpp
 )
 
 add_executable(${This} ${SOURCES})
