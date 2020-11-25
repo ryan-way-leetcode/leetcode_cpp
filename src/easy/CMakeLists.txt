@@ -13,5 +13,6 @@ set(easy_source_files
     349IntersectionofTwoArrays.cpp
     350IntersectionofTwoArraysII.cpp
     387FirstUniqueCharacterInString.cpp
+    383RansomNote.cpp
 )
 add_library(easy_sources OBJECT "${easy_source_files}")
