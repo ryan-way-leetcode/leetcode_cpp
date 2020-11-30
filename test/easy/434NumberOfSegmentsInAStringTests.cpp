@@ -34,3 +34,27 @@ TEST(NumberOfSegmentsInAString, Example4)
 
   EXPECT_EQ(sol.countSegments(s), 0);
 }
+
+TEST(NumberOfSegmentsInAString, Failed1)
+{
+  Solution sol;
+  string s = "";
+
+  EXPECT_EQ(sol.countSegments(s), 0);
+}
+
+TEST(NumberOfSegmentsInAString, Failed2)
+{
+  Solution sol;
+  string s = "                 ";
+
+  EXPECT_EQ(sol.countSegments(s), 0);
+}
+
+TEST(NumberOfSegmentsInAString, Failed3)
+{
+  Solution sol;
+  string s = "      a          ";
+
+  EXPECT_EQ(sol.countSegments(s), 1);
+}
