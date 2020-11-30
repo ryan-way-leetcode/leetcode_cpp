@@ -3,6 +3,34 @@
 
 using namespace IntersectionofTwoArraysII;
 
+bool compareVectorContents(vector<int> vec1, vector<int> vec2)
+{
+  unordered_map<int, int> map;
+
+  for(int i : vec1)
+  {
+    cout << i << ",";
+  }
+  for(int i : vec2)
+  {
+    cout << i << ",";
+  }
+  cout << endl;
+
+  for(int i : vec2)
+  {
+    map[i]++;
+  }
+
+  for(int i : vec1)
+  {
+    if(map.count(i) == 0) return false;
+    map[i]--;
+  }
+
+  return all_of(map.begin(), map.end(), [](pair<int, int> p) { return p.second == 0; });
+}
+
 TEST(IntersectionofTwoArraysII, Example1)
 {
   Solution s;
@@ -12,7 +40,7 @@ TEST(IntersectionofTwoArraysII, Example1)
 
   vector<int> act = s.intersect(nums1, nums2);
   
-  EXPECT_EQ(act, out);
+  EXPECT_TRUE(compareVectorContents(act, out));
 }
 
 TEST(IntersectionofTwoArraysII, Example2)
@@ -24,5 +52,5 @@ TEST(IntersectionofTwoArraysII, Example2)
 
   vector<int> act = s.intersect(nums1, nums2);
   
-  EXPECT_EQ(act, out);
+  EXPECT_TRUE(compareVectorContents(act, out));
 }
