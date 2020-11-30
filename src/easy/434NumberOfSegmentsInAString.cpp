@@ -6,15 +6,8 @@ int NumberOfSegmentsInAString::Solution::countSegments(string s)
   int count = 0;
   for(const char& c : s)
   {
-    if(c == ' ' && character)
-    {
-      count++;
-      character = false;
-    }
-    else if(c != ' ')
-    {
-      character = true;
-    }
+    count += c == ' ' && character;
+    character = c != ' ';
   }
   count += character;
 
