@@ -2,6 +2,9 @@
 #define D132PATTERN
 
 #include <vector>
+#include <algorithm>
+#include <climits>
+#include <stack>
 
 using namespace std;
 
