@@ -56,33 +56,26 @@ int AsFarFromLandAsPossible::Solution::maxDistance(vector<vector<int>>& grid)
     pair<int, int> p = q.front();
     q.pop();
     
-    pair<int, int> n = pair(p.first-1, p.second);
-    if(n.first >= 0 && dist[p.first][p.second] + 1 < dist[n.first][n.second])
+    vector<pair<int,int>> neighbors
     {
-      dist[n.first][n.second] = dist[p.first][p.second] + 1;
-      q.push(n);
-    }
+      pair(p.first-1, p.second),
+      pair(p.first+1, p.second),
+      pair(p.first, p.second-1),
+      pair(p.first, p.second+1)
+    };
 
-    n = pair(p.first+1, p.second);
-    if(n.first <= grid.size()-1 && dist[p.first][p.second] + 1 < dist[n.first][n.second])
+    for(pair<int, int> n : neighbors)
     {
-      dist[n.first][n.second] = dist[p.first][p.second] + 1;
-      q.push(n);
-    }
-    
-    n = pair(p.first, p.second-1);
-    if(n.second >= 0 && dist[p.first][p.second] + 1 < dist[n.first][n.second])
-    {
-      dist[n.first][n.second] = dist[p.first][p.second] + 1;
-      q.push(n);
-    }
-
-    n = pair(p.first, p.second+1);
-    if(n.second <= grid[0].size()-1 
-        && dist[p.first][p.second] + 1 < dist[n.first][n.second])
-    {
-      dist[n.first][n.second] = dist[p.first][p.second] + 1;
-      q.push(n);
+      if(n.first < 0) continue;
+      if(n.first >= grid.size()) continue;
+      if(n.second < 0) continue;
+      if(n.second >= grid[n.first].size()) continue;
+      
+      if(dist[p.first][p.second] + 1 < dist[n.first][n.second])
+      {
+        dist[n.first][n.second] = dist[p.first][p.second] + 1;
+        q.push(n);
+      }
     }
 
   }
