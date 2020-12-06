@@ -53,8 +53,6 @@ int AsFarFromLandAsPossible::Solution::maxDistance(vector<vector<int>>& grid)
 
   while(!q.empty())
   {
-    PrintGrid(dist, "DIST");
-    PrintQueue(q, "QUEUE");
     pair<int, int> p = q.front();
     q.pop();
     
