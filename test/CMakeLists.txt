@@ -18,7 +18,9 @@ set(SOURCES
     easy/434NumberOfSegmentsInAStringTests.cpp
     easy/387FirstUniqueCharacterInStringTests.cpp
     easy/383RansomNoteTests.cpp
+
     med/456132PatternTests.cpp
+    med/1162AsFarFromLandAsPossibleTests.cpp
 )
 
 add_executable(${This} ${SOURCES})
