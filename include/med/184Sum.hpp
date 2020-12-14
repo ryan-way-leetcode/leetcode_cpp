@@ -2,7 +2,12 @@
 #define FOURSUM
 
 #include <vector>
+#include <iostream>
+#include <numeric>
+#include <set>
 #include <unordered_set>
+#include <unordered_map>
+#include <algorithm>
 
 using namespace std;
 

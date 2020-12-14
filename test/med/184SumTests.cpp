@@ -5,10 +5,15 @@ using namespace FourSum;
 
 void TwoDSetCompare(vector<vector<int>> act, vector<vector<int>> out)
 {
-  unordered_set<vector<int>> act_set(act.begin(), act.end());
-  unordered_set<vector<int>> out_set(out.begin(), out.end());
+  EXPECT_EQ(act.size(), out.size());
 
-  EXPECT_EQ(act_set, out_set);
+  for(vector<int> a : act)
+  {
+    sort(a.begin(), a.end());
+  }
+  sort(act.begin(), act.end());
+  
+  EXPECT_EQ(act, out);
 }
 
 TEST(FourSum, Example1)
@@ -38,4 +43,55 @@ TEST(FourSum, Example2)
   vector<vector<int>> act = sol.fourSum(nums, target);
 
   TwoDSetCompare(act, out);
+}
+
+TEST(FourSum, Overflow)
+{
+  Solution sol;
+  vector<int> nums(10, 1000000000);
+  int target = 0;
+  vector<vector<int>> out;
+
+  vector<vector<int>> act = sol.fourSum(nums, target);
+
+  TwoDSetCompare(act, out);
+}
+
+TEST(FourSum, Underflow)
+{
+  Solution sol;
+  vector<int> nums(10, -1000000000);
+  int target = 0;
+  vector<vector<int>> out;
+
+  vector<vector<int>> act = sol.fourSum(nums, target);
+
+  TwoDSetCompare(act, out);
+}
+
+TEST(FourSum, LargeInput)
+{
+  Solution sol;
+  vector<int> nums(200, 10);
+  int target = 40;
+  vector<vector<int>> out{ { 10, 10, 10, 10 } };
+
+  vector<vector<int>> act = sol.fourSum(nums, target);
+
+  TwoDSetCompare(act, out);
+
+}
+
+TEST(FourSum, Tricky)
+{
+  Solution sol;
+  vector<int> nums(50, 10);
+  nums[25] = 9;
+  int target = 39;
+  vector<vector<int>> out{ { 9, 10, 10, 10 } };
+
+  vector<vector<int>> act = sol.fourSum(nums, target);
+
+  TwoDSetCompare(act, out);
+
 }
