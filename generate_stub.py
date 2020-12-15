@@ -30,7 +30,7 @@ for i in [ test_file, source_file, header_file ]:
     parse = i.split('/')
 
     new_file_name = "/".join(parse[:-1] + [sys.argv[3]] + parse[-1:])
-    new_file_name = new_file_name.replace('template', number+title)
+    new_file_name = new_file_name.replace('template', str(number)+title)
     print("Generating new file: %s..." % new_file_name)
 
     if path.exists(new_file_name):
@@ -39,7 +39,7 @@ for i in [ test_file, source_file, header_file ]:
     with open(i, "r") as fro:
         with open(new_file_name, "w") as to:
             for line in fro:
-                for i,j in enumerate(replace):
+                for i,j in replace.items():
                     line = line.replace(i, j)
                 to.write(line)
 
