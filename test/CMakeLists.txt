@@ -21,6 +21,7 @@ set(SOURCES
 
     med/456132PatternTests.cpp
     med/1162AsFarFromLandAsPossibleTests.cpp
+    med/184SumTests.cpp
 
     templateTests.cpp
 )
