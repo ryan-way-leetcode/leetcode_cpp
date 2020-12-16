@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <algorithm>
+#include <stack>
 #include <iostream>
 
 using namespace std;

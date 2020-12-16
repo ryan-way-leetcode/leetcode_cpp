@@ -2,32 +2,35 @@
 
 vector<int> AsteroidCollision::Solution::asteroidCollision(vector<int>& asteroids)
 {
+  stack<int> s;
 
-  for(int i = 0; i < asteroids.size()-1 && asteroids.size() > 0; i++)
+  for(int i : asteroids)
   {
-    while (
-        asteroids.size() > 0 && i < asteroids.size() -1 && 
-        asteroids[i] > 0 && asteroids[i+1] < 0)
+    bool flag = true;
+    while(!s.empty() && i < 0 && s.top() > 0)
     {
-      if (abs(asteroids[i]) == abs(asteroids[i+1]))
+      if(s.top() < -i)
       {
-        asteroids.erase(asteroids.begin()+i+1);
-        asteroids.erase(asteroids.begin()+i);
-        i = max(0, i-1);
+        s.pop();
+        continue;
       }
-      else
+      else if(s.top() == -i)
       {
-        asteroids[i] = abs(asteroids[i]) > abs(asteroids[i+1]) ? 
-          asteroids[i] :
-          asteroids[i+1];
-
-        asteroids.erase(asteroids.begin()+i+1);
-
-        if(asteroids[i] < 0 )
-          i = max(0, i - 1);
+        s.pop();
       }
-
+      flag = false;
+      break;
     }
+    if(flag)
+      s.push(i);
   }
-  return asteroids; 
+
+  vector<int> v;
+  while(!s.empty())
+  {
+    v.push_back(s.top());
+    s.pop();
+  }
+  reverse(v.begin(), v.end());
+  return v;
 }
