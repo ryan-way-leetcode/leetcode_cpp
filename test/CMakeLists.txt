@@ -24,6 +24,7 @@ set(SOURCES
     med/184SumTests.cpp
     med/207CourseScheduleTests.cpp
     med/735AsteroidCollisionTests.cpp
+    med/29DivideTwoIntegersTests.cpp
 
     templateTests.cpp
 )
