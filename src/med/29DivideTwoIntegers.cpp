@@ -16,7 +16,7 @@ int DivideTwoIntegers::Solution::divide(int dividend, int divisor)
   int result = 0;
 
   long shift = ldivisor;
-  int value = 1;
+  long value = 1;
 
   while(shift < ldividend)
   {
@@ -36,5 +36,5 @@ int DivideTwoIntegers::Solution::divide(int dividend, int divisor)
     value >>= 1;
   }
 
-  return negate? -result : result;
+  return negate && result != INT_MIN? -result : result;
 }
