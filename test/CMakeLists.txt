@@ -23,6 +23,8 @@ set(SOURCES
     med/1162AsFarFromLandAsPossibleTests.cpp
     med/184SumTests.cpp
     med/40CombintaionSumIITests.cpp
+    med/207CourseScheduleTests.cpp
+    med/735AsteroidCollisionTests.cpp
 
     templateTests.cpp
 )
