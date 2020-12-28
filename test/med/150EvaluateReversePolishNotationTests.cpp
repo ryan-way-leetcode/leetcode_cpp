@@ -6,15 +6,35 @@ using namespace EvaluateReversePolishNotation;
 TEST(EvaluateReversePolishNotation, Example1)
 {
   Solution sol;
-  int i = 0;
+  vector<string> input
+  {
+    "2", "1", "+", "3", "*"
+  };
+  int output = 9;
 
-  EXPECT_EQ(sol.evaluatereversepolishnotationMethod(0), 0);
+  EXPECT_EQ(sol.evalRPN(input), output);
 }
 
 TEST(EvaluateReversePolishNotation, Example2)
 {
   Solution sol;
-  int i = 5;
+  vector<string> input
+  {
+    "4", "13", "5", "/", "+"
+  };
+  int output = 6;
 
-  EXPECT_EQ(sol.evaluatereversepolishnotationMethod(1), 1);
+  EXPECT_EQ(sol.evalRPN(input), output);
+}
+
+TEST(EvaluateReversePolishNotation, Example3)
+{
+  Solution sol;
+  vector<string> input
+  {
+    "10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"
+  };
+  int output = 22;
+
+  EXPECT_EQ(sol.evalRPN(input), output);
 }

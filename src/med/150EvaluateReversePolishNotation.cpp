@@ -1,6 +1,6 @@
 #include "../../include/med/150EvaluateReversePolishNotation.hpp"
 
-int EvaluateReversePolishNotation::Solution::evaluatereversepolishnotationMethod(int i)
+int EvaluateReversePolishNotation::Solution::evalRPN(vector<string>& tokens)
 {
-  return i;
+  return 0;
 }
