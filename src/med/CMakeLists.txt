@@ -8,5 +8,6 @@ set(med_source_files
   29DivideTwoIntegers.cpp
   8StringToInteger.cpp
   150EvaluateReversePolishNotation.cpp
+  187RepeatedDNASequences.cpp
 )
 add_library(med_sources OBJECT "${med_source_files}")
