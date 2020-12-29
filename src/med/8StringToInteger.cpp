@@ -1,6 +1,6 @@
 #include "../../include/med/8StringToInteger.hpp"
 
-int StringToInteger::Solution::stringtointegerMethod(int i)
+int StringToInteger::Solution::myAtoi(string s)
 {
-  return i;
+  return 0;
 }
