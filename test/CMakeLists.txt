@@ -27,6 +27,8 @@ set(SOURCES
     med/735AsteroidCollisionTests.cpp
     med/29DivideTwoIntegersTests.cpp
     med/443StringCompressionTests.cpp
+    med/8StringToIntegerTests.cpp
+    med/150EvaluateReversePolishNotationTests.cpp
 
     templateTests.cpp
 )
