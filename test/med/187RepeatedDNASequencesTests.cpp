@@ -3,18 +3,60 @@
 
 using namespace RepeatedDNASequences;
 
+void SetCompare(vector<string> act, vector<string> exp)
+{
+  EXPECT_EQ(act.size(), exp.size());
+  unordered_set<string> act_set(act.begin(), act.end());
+  unordered_set<string> exp_set(exp.begin(), exp.end());
+  EXPECT_EQ(act_set, exp_set);
+}
+
 TEST(RepeatedDNASequences, Example1)
 {
   Solution sol;
-  int i = 0;
+  string s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT";
+  vector<string> output
+  {
+    "AAAAACCCCC",
+    "CCCCCAAAAA"
+  };
 
-  EXPECT_EQ(sol.repeateddnasequencesMethod(0), 0);
+  SetCompare(sol.findRepeatedDnaSequences(s), output);
 }
 
 TEST(RepeatedDNASequences, Example2)
 {
   Solution sol;
-  int i = 5;
+  string s = "AAAAAAAAAAAAA";
+  vector<string> output
+  {
+    "AAAAAAAAAA"
+  };
 
-  EXPECT_EQ(sol.repeateddnasequencesMethod(1), 1);
+  SetCompare(sol.findRepeatedDnaSequences(s), output);
+}
+
+TEST(RepeatedDNASequences, Example3)
+{
+  Solution sol;
+  string s(100000, 'A');
+  vector<string> output
+  {
+    "AAAAAAAAAA"
+  };
+
+  SetCompare(sol.findRepeatedDnaSequences(s), output);
+}
+
+TEST(RepeatedDNASequences, Example4)
+{
+  Solution sol;
+  string s = "AAAAAAAAAAA";
+  cout << s.size() << endl;
+  vector<string> output
+  {
+    "AAAAAAAAAA"
+  };
+
+  SetCompare(sol.findRepeatedDnaSequences(s), output);
 }

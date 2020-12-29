@@ -2,11 +2,9 @@
 #define REPEATEDDNASEQUENCES
 
 #include <vector>
-#include <queue>
-#include <climits>
-#include <algorithm>
-#include <iostream>
 #include <string>
+#include <unordered_map>
+#include <unordered_set>
 
 using namespace std;
 
@@ -14,7 +12,7 @@ namespace RepeatedDNASequences {
   
   class Solution {
     public:
-      int repeateddnasequencesMethod(int i);
+      vector<string> findRepeatedDnaSequences(string s);
   };
 
 }
