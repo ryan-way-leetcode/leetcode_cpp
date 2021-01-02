@@ -4,17 +4,17 @@ void topSort(
     int v,
     vector<vector<int>>& adj, 
     vector<int>& visited, 
-    stack<int>& s)
+    queue<int>& q)
 {
   visited[v] = 1;
 
   for(int i : adj[v])
   {
     if(!visited[i])
-      topSort(i, adj, visited, s);
+      topSort(i, adj, visited, q);
   }
 
-  s.push(v);
+  q.push(v);
 }
 
 vector<int> LoudAndRich::Solution::loudAndRich(
@@ -29,28 +29,28 @@ vector<int> LoudAndRich::Solution::loudAndRich(
     adj[v[1]].push_back(v[0]);
   }
   // topological sort
-  stack<int> s;
-  vector<int> order, visited(N, 0);
+  // in normal implementation, topological sort uses a stack.
+  // the stack contains the elements in reverse order
+  // since the last step iterates in reverse order, use a queue instead
+  queue<int> q;
+  vector<int> visited(N, 0);
   for(int i = 0; i < N; i++)
   {
     if(!visited[i])
-      topSort(i, adj, visited, s);
-  }
-  while(!s.empty())
-  {
-    order.push_back(s.top());
-    s.pop();
+      topSort(i, adj, visited, q);
   }
 
   // back fill answer in reverse topological order
-  vector<int> answer; for(int i = 0; i < N; i++) answer.push_back(i);
+  vector<int> answer(N, 0); for(int i = 0; i < N; i++) answer[i] = i;
 
-  for(int i = order.size()-1; i >= 0; i--)
+  while(!q.empty())
   {
-    for(int n : adj[order[i]])
+    int i = q.front();
+    q.pop();
+    for(int n : adj[i])
     {
-      if(quiet[answer[n]] < quiet[answer[order[i]]])
-        answer[order[i]] = answer[n];
+      if(quiet[answer[n]] < quiet[answer[i]])
+        answer[i] = answer[n];
     }
   }
 
