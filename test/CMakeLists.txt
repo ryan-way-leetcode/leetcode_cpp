@@ -29,6 +29,7 @@ set(SOURCES
     med/443StringCompressionTests.cpp
     med/8StringToIntegerTests.cpp
     med/150EvaluateReversePolishNotationTests.cpp
+    med/187RepeatedDNASequencesTests.cpp
 
     templateTests.cpp
 )
