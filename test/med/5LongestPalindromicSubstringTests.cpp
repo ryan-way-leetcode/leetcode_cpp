@@ -38,3 +38,21 @@ TEST(LongestPalindromicSubstring, Example4)
 
   EXPECT_EQ(sol.longestPalindrome(s), out);
 }
+
+TEST(LongestPalindromicSubstring, Example5)
+{
+  Solution sol;
+  string s = "abb";
+  string out = "bb";
+
+  EXPECT_EQ(sol.longestPalindrome(s), out);
+}
+
+TEST(LongestPalindromicSubstring, Example6)
+{
+  Solution sol;
+  string s = "aacabdkacaa";
+  string out = "aca";
+
+  EXPECT_EQ(sol.longestPalindrome(s), out);
+}
