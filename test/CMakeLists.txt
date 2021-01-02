@@ -30,6 +30,7 @@ set(SOURCES
     med/8StringToIntegerTests.cpp
     med/150EvaluateReversePolishNotationTests.cpp
     med/187RepeatedDNASequencesTests.cpp
+    med/5LongestPalindromicSubstringTests.cpp
 
     templateTests.cpp
 )
