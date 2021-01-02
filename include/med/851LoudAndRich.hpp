@@ -2,11 +2,7 @@
 #define LOUDANDRICH
 
 #include <vector>
-#include <queue>
-#include <climits>
-#include <algorithm>
-#include <iostream>
-#include <string>
+#include <stack>
 
 using namespace std;
 
@@ -14,7 +10,7 @@ namespace LoudAndRich {
   
   class Solution {
     public:
-      int loudandrichMethod(int i);
+      vector<int> loudAndRich(vector<vector<int>>& richer, vector<int>& quiet);
   };
 
 }
