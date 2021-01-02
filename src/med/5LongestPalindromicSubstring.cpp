@@ -1,6 +1,6 @@
 #include "../../include/med/5LongestPalindromicSubstring.hpp"
 
-int LongestPalindromicSubstring::Solution::longestpalindromicsubstringMethod(int i)
+string LongestPalindromicSubstring::Solution::longestPalindrome(string s)
 {
-  return i;
+  return "";
 }

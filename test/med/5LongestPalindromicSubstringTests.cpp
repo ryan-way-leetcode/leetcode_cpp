@@ -6,15 +6,35 @@ using namespace LongestPalindromicSubstring;
 TEST(LongestPalindromicSubstring, Example1)
 {
   Solution sol;
-  int i = 0;
+  string s = "babad";
+  string out = "bab";
 
-  EXPECT_EQ(sol.longestpalindromicsubstringMethod(0), 0);
+  EXPECT_EQ(sol.longestPalindrome(s), out);
 }
 
 TEST(LongestPalindromicSubstring, Example2)
 {
   Solution sol;
-  int i = 5;
+  string s = "cbbd";
+  string out = "bb";
 
-  EXPECT_EQ(sol.longestpalindromicsubstringMethod(1), 1);
+  EXPECT_EQ(sol.longestPalindrome(s), out);
+}
+
+TEST(LongestPalindromicSubstring, Example3)
+{
+  Solution sol;
+  string s = "a";
+  string out = "a";
+
+  EXPECT_EQ(sol.longestPalindrome(s), out);
+}
+
+TEST(LongestPalindromicSubstring, Example4)
+{
+  Solution sol;
+  string s = "ac";
+  string out = "a";
+
+  EXPECT_EQ(sol.longestPalindrome(s), out);
 }
