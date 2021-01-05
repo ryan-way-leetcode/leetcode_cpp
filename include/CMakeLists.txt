@@ -7,7 +7,9 @@ INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}"
 target_link_libraries(leetCode_Includes 
 INTERFACE easy_Includes
 INTERFACE med_Includes
+INTERFACE hard_Includes
 )
 
 add_subdirectory(easy)
 add_subdirectory(med)
+add_subdirectory(hard)

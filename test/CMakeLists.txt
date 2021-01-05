@@ -32,6 +32,8 @@ set(SOURCES
     med/187RepeatedDNASequencesTests.cpp
     med/851LoudAndRichTests.cpp
 
+    hard/488ZumaGameTests.cpp
+
     templateTests.cpp
 )
 
