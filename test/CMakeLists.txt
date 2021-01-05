@@ -31,6 +31,7 @@ set(SOURCES
     med/150EvaluateReversePolishNotationTests.cpp
     med/187RepeatedDNASequencesTests.cpp
     med/5LongestPalindromicSubstringTests.cpp
+    med/851LoudAndRichTests.cpp
 
     templateTests.cpp
 )
