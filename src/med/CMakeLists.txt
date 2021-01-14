@@ -11,5 +11,6 @@ set(med_source_files
   150EvaluateReversePolishNotation.cpp
   187RepeatedDNASequences.cpp
   851LoudAndRich.cpp
+  1310XorQueries.cpp
 )
 add_library(med_sources OBJECT "${med_source_files}")
