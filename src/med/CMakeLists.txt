@@ -10,6 +10,7 @@ set(med_source_files
   8StringToInteger.cpp
   150EvaluateReversePolishNotation.cpp
   187RepeatedDNASequences.cpp
+  5LongestPalindromicSubstring.cpp
   851LoudAndRich.cpp
   54SprialMatrix.cpp
 )
